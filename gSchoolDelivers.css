@@ -1,0 +1,27 @@
+#gDel {
+  margin-left: 20px;
+}
+  /*.parallax-container {
+    background-position: 50% 210px;
+    min-height: 650px;
+    background-size: 100%;
+  }*/
+/*
+.parallax {
+  background-position: 50% 210px;
+  height: 650px;
+  background-size: 100%;
+}*/
+/*@media (min-width: 980px) { Desktop
+
+.parallax_with_special_background {
+background-image: url(http://domain.com/image_with_290px_blank_space_on_left.jpg) !important;
+background-size: 100% auto !important;
+}
+}
+@media (max-width: 979px) {  Tablet/Mobile
+.parallax_with_special_background {
+background-image: url(http://domain.com/image_without_290px_blank_space_on_left.jpg) !important;
+background-size: 100% auto !important;
+}
+}*/
