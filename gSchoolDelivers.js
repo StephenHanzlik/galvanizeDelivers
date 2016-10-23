@@ -6,20 +6,27 @@ $(document).ready(function() {
   //     $(this)[0].replaceWith(".")
   // };
   //
-  $('#burgerBuy').on('click', function() {
-  priceConvert($("#priceBurger"));
 
+//Converts price from text() to string with decimal
+function priceConvert(rawPrice) {
+  var arr = [];
+  for (var i = 1; i < rawPrice.length; i++) {
+    var digit = rawPrice.charAt(i);
+    arr.push(digit);
   }
-
-
-function priceConvert() {
-    var subtotalArr = [];
-    for (var i = 1; i < rawPrice.length; i++) {
-        var digit = rawPrice.charAt(i);
-          subtotalArr.push(digit);
-    }
-    return subtotalArr.join('');
+  return arr.join('');
 };
+
+
+var buyBurger = $('#buyBurger');
+var priceBurger = $('#priceBurger').text();
+
+buyBurger.on('click', function() {
+    var itemPriceStr = priceConvert(priceBurger);
+    var subtotal =
+
+});
+
 
 
 });
