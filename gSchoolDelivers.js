@@ -1,11 +1,7 @@
 "use strict";
 $(document).ready(function() {
+
   $('.parallax').parallax();
-  //
-  // var cartAdd = function() {
-  //     $(this)[0].replaceWith(".")
-  // };
-  //
 
 //Converts price from text() to string with decimal
 function priceConvert(rawPrice) {
@@ -15,11 +11,16 @@ function priceConvert(rawPrice) {
     arr.push(digit);
   }
   return arr.join('');
-};
-
+}
 
 var buyBurger = $('#buyBurger');
 var priceBurger = $('#priceBurger').text();
+var buyArugula = $('#buyArugula');
+var priceArugula = $('#priceArugula').text();
+var buySwine = $('#buySwine');
+var priceSwine = $('#priceSwine').text();
+var buyIce = $('#buyIce');
+var priceIce= $('#priceIce').text();
 var subTotalText = $('#subTotal').text();
 var subTotalArr = [];
 
@@ -30,26 +31,71 @@ buyBurger.on('click', function() {
   var subReduced = subTotalArr.reduce(function(a, b) {
     return a + b;
     }, 0);
-  $('#subTotal').empty()
-  $('#subTotal').append((("$"+ subReduced)));
+  var roundReduced = Math.round(subReduced * 100)/100;
+  var roundTax = Math.round((subReduced * .1) * 100)/100;
+  var total = roundReduced + roundTax;
+  var roundTotal = Math.round((total) * 100)/100;
+  $('#subTotal').empty();
+  $('#subTotal').append("$"+ roundReduced);
+  $('#tax').empty();
+  $('#tax').append("$"+ roundTax);
+  $('#total').empty();
+  $('#total').append("$"+ roundTotal);
 
 });
 
-var buyArugula = $('#buyArugula ');
-var priceArugula = $('#priceArugula').text();
+buyArugula.on('click', function() {
+  var itemPrice = parseFloat(priceConvert(priceArugula));
+  subTotalArr.push(itemPrice);
+  var subReduced = subTotalArr.reduce(function(a, b) {
+    return a + b;
+    }, 0);
+  var roundReduced = Math.round(subReduced * 100)/100;
+  var roundTax = Math.round((subReduced * .1) * 100)/100;
+  var total = roundReduced + roundTax;
+  var roundTotal = Math.round((total) * 100)/100;
+  $('#subTotal').empty();
+  $('#subTotal').append("$"+ roundReduced);
+  $('#tax').empty();
+  $('#tax').append("$"+ roundTax);
+  $('#total').empty();
+  $('#total').append("$"+ roundTotal);
+});
 
+buySwine.on('click', function() {
+  var itemPrice = parseFloat(priceConvert(priceSwine));
+  subTotalArr.push(itemPrice);
+  var subReduced = subTotalArr.reduce(function(a, b) {
+    return a + b;
+    }, 0);
+  var roundReduced = Math.round(subReduced * 100)/100;
+  var roundTax = Math.round((subReduced *.1) * 100)/100;
+  var total = roundReduced + roundTax;
+  var roundTotal = Math.round((total) * 100)/100;
+  $('#subTotal').empty();
+  $('#subTotal').append("$"+ roundReduced);
+  $('#tax').empty();
+  $('#tax').append("$"+ roundTax);
+  $('#total').empty();
+  $('#total').append("$"+ roundTotal);
+});
 
-
-//Old Method before adding numbers in array 
-// buyArugula.on('click', function() {
-//   var itemPrice = parseFloat(priceConvert(priceArugula));
-//   var cartSubTotal = parseFloat(priceConvert(subTotalText));
-//   var appendTotal = itemPrice + cartSubTotal;
-//   //append subtotal
-//   $('#subTotal').empty();
-//   $('#subTotal').append((("$"+ appendTotal)));
-// });
-
-
+buyIce.on('click', function() {
+  var itemPrice = parseFloat(priceConvert(priceIce));
+  subTotalArr.push(itemPrice);
+  var subReduced = subTotalArr.reduce(function(a, b) {
+    return a + b;
+    }, 0);
+  var roundReduced = Math.round(subReduced * 100)/100;
+  var roundTax = Math.round((subReduced*.1) * 100)/100;
+  var total = roundReduced + roundTax;
+  var roundTotal = Math.round((total) * 100)/100;
+  $('#subTotal').empty();
+  $('#subTotal').append("$"+ roundReduced);
+  $('#tax').empty();
+  $('#tax').append("$"+ roundTax);
+  $('#total').empty();
+  $('#total').append("$"+ roundTotal);
+});
 
 });
