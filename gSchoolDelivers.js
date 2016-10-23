@@ -21,16 +21,34 @@ function priceConvert(rawPrice) {
 var buyBurger = $('#buyBurger');
 var priceBurger = $('#priceBurger').text();
 var subTotalText = $('#subTotal').text();
+var subTotalArr = [];
+
 
 buyBurger.on('click', function() {
   var itemPrice = parseFloat(priceConvert(priceBurger));
-  var cartSubTotal = parseFloat(priceConvert(subTotalText));
-  var appendTotal = itemPrice + cartSubTotal;
-  //line does not append as expected
-  $('#subTotal').empty();
-  $('#subTotal').append((("$"+ appendTotal)));
-  // $('#subTotal').append($('#priceBurger'));
+  subTotalArr.push(itemPrice);
+  var subReduced = subTotalArr.reduce(function(a, b) {
+    return a + b;
+    }, 0);
+  $('#subTotal').empty()
+  $('#subTotal').append((("$"+ subReduced)));
+
 });
+
+var buyArugula = $('#buyArugula ');
+var priceArugula = $('#priceArugula').text();
+
+
+
+//Old Method before adding numbers in array 
+// buyArugula.on('click', function() {
+//   var itemPrice = parseFloat(priceConvert(priceArugula));
+//   var cartSubTotal = parseFloat(priceConvert(subTotalText));
+//   var appendTotal = itemPrice + cartSubTotal;
+//   //append subtotal
+//   $('#subTotal').empty();
+//   $('#subTotal').append((("$"+ appendTotal)));
+// });
 
 
 
