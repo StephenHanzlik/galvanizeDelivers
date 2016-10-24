@@ -27,6 +27,10 @@
     </div>
     <div class="container">
         <div class="row">
+          <h4 class="col s6">Menu</h4>
+          <h4 class="col s6">Order</h4>
+        </div>
+        <div class="row">
             <div class="col s3">
                 <div class="card hoverable">
                     <div class="card-image">
@@ -34,7 +38,7 @@
                         <span class="card-title"></span>
                     </div>
                     <div class="card-content">
-                        <h6>Royale with Cheese</h6>
+                        <h6 id="itemBurg">Royale with Cheese</h6>
                         <p id="priceBurger">$8.99</p>
                     </div>
                     <div class="card-action">
@@ -49,7 +53,7 @@
                         <span class="card-title"></span>
                     </div>
                     <div class="card-content">
-                        <h6>Arugula Pie</h6>
+                        <h6 id="itemArugula">Arugula Pie</h6>
                         <p id="priceArugula">$11.99</p>
                     </div>
                     <div class="card-action">
@@ -63,30 +67,12 @@
                     <thead>
                         <tr>
                             <th data-field="name">Item</th>
-                            <th data-field="price">Price</th>
+                            <th data-field="price" class="right">Price</th>
                         </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody id="table">
                         <tr>
-                            <td></td>
-                            <td class="right"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="right"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="right"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="right"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td class="right"></td>
                         </tr>
                     </tbody>
                 </table>
@@ -100,7 +86,7 @@
                         <span class="card-title"></span>
                     </div>
                     <div class="card-content">
-                        <h6>Smoked Swine</h6>
+                        <h6 id="itemSwine">Smoked Swine</h6>
                         <p id="priceSwine">$14.99</p>
                     </div>
                     <div class="card-action">
@@ -115,7 +101,7 @@
                         <span class="card-title"></span>
                     </div>
                     <div class="card-content">
-                        <h6>Ice Cream Biscuit</h6>
+                        <h6 id="itemIce">Ice Cream Biscuit</h6>
                         <p id="priceIce">$7.99</p>
                     </div>
                     <div class="card-action">
@@ -141,8 +127,39 @@
                 </tbody>
                 </table>
             </div>
+            <form class="col s6">
+              <div class="row">
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="icon_prefix" type="text" class="validate">
+                  <label for="icon_prefix">Name</label>
+                </div>
+                <div class="input-field col s6">
+                  <i class="material-icons prefix">phone</i>
+                  <input id="icon_telephone" type="tel" class="validate">
+                  <label for="icon_telephone">Telephone</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <i class="material-icons prefix">business</i>
+                  <textarea id="textarea1" class="materialize-textarea"></textarea>
+                  <label for="textarea1">address</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s4">
+                </div>
+                <div class="col s5">
+                  <button id="submitToast" class="btn waves-effect waves-light" type="button" name="action" >Submit
+                      <i class="material-icons right">send</i>
+                  </button>
+                </div>
+              </div>
+              </div>
+            </form>
+
         </div>
-    </div>
     </div>
 
 
@@ -165,7 +182,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                2016 <a class="brown-text text-lighten-3" href="http://materializecss.com">Galvanize Delivers</a>
+                2016 <a class="brown-text text-lighten-3">Galvanize Delivers</a>
             </div>
         </div>
     </footer>
